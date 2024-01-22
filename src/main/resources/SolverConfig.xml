@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver xmlns="https://timefold.ai/xsd/solver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://timefold.ai/xsd/solver https://timefold.ai/xsd/solver/solver.xsd">
+    <environmentMode>FULL_ASSERT</environmentMode>
+    <!-- Define the model -->
+    <solutionClass>aj19090.komb.lpd.domain.MeetingSchedule</solutionClass>
+    <entityClass>aj19090.komb.lpd.domain.MeetingSetting</entityClass>
+
+    <!-- Define the score function -->
+    <scoreDirectorFactory>
+        <constraintProviderClass>aj19090.komb.lpd.solver.MeetingScheduleConstraintProvider</constraintProviderClass>
+    </scoreDirectorFactory>
+
+    <!-- Configure the optimization algorithms (optional) -->
+    <termination>
+        <secondsSpentLimit>30</secondsSpentLimit>
+    </termination>
+
+    <constructionHeuristic />
+</solver>
